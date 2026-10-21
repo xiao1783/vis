@@ -1,0 +1,31 @@
+/* A short opening shot, confined to the homepage. All content is visible by default. */
+.home-page .hero { background: radial-gradient(ellipse at 75% 38%, #e5ebff80, transparent 46%), radial-gradient(ellipse at 15% 80%, #e7edf680, transparent 48%), #f7f8fc; }
+.cinema-intro { position: fixed; inset: 0; z-index: 500; pointer-events: none; overflow: hidden; }
+.cinema-shutter { position: absolute; left: 0; width: 100%; height: 50.1%; background: linear-gradient(135deg, #f8faff, #eaf0fc); }
+.cinema-shutter-top { top: 0; transform-origin: center top; animation: cinema-open-top 1050ms cubic-bezier(.65,0,.2,1) both; }
+.cinema-shutter-bottom { bottom: 0; transform-origin: center bottom; animation: cinema-open-bottom 1050ms cubic-bezier(.65,0,.2,1) both; }
+.cinema-seam { position: absolute; left: 12%; right: 12%; top: 50%; height: 1px; background: #aabceb; box-shadow: 0 0 20px 3px #bed0ff60; animation: cinema-seam 650ms ease-out both; }
+.cinema-skip { position: absolute; top: 20px; right: 24px; pointer-events: auto; border: 1px solid #d6e1f4; border-radius: 24px; background: #ffffffed; color: #596fa3; padding: 9px 15px; font: 12px var(--font); cursor: pointer; }
+.cinema-enter .hero-copy .tag { animation: cinema-arrive 650ms 200ms cubic-bezier(.16,1,.3,1) both; }
+.cinema-enter .hero-copy h1 { animation: cinema-title 1000ms 180ms cubic-bezier(.16,1,.3,1) both; }
+.cinema-enter .hero-copy .sub { animation: cinema-arrive 800ms 320ms cubic-bezier(.16,1,.3,1) both; }
+.cinema-enter .hero-actions { animation: cinema-arrive 750ms 440ms cubic-bezier(.16,1,.3,1) both; }
+.cinema-enter .hero-stats { animation: cinema-arrive 700ms 540ms cubic-bezier(.16,1,.3,1) both; }
+.cinema-enter .hero-demo { animation: cinema-frame 1150ms 260ms cubic-bezier(.16,1,.3,1) both; transform-origin: center; }
+.cinema-enter .hero :is(.margin-study, .hero-connections) { animation: cinema-atmosphere 1100ms 350ms ease-out both; }
+@keyframes cinema-open-top { 0%, 8% { transform: translateY(0); } 100% { transform: translateY(-101%); } }
+@keyframes cinema-open-bottom { 0%, 8% { transform: translateY(0); } 100% { transform: translateY(101%); } }
+@keyframes cinema-seam { 0% { opacity: 0; transform: scaleX(.15); } 30% { opacity: .9; } 100% { opacity: 0; transform: scaleX(1); } }
+@keyframes cinema-title { from { opacity: 0; transform: translateY(24px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0); } }
+@keyframes cinema-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cinema-frame { from { opacity: 0; transform: translateY(24px) scale(.965); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes cinema-atmosphere { from { opacity: 0; } }
+@media (max-width:720px) {
+  .cinema-skip { top: 14px; right: 16px; }
+  .cinema-enter .hero-demo { animation-delay: 330ms; }
+}
+body.reduce-motion .cinema-intro { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .cinema-intro { display: none; }
+  .cinema-enter .hero :is(.tag,h1,.sub,.hero-actions,.hero-stats,.hero-demo,.margin-study,.hero-connections) { animation: none !important; }
+}

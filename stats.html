@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<title data-i18n="title.stats">学习统计 · 可视化学习实验室</title>
+<meta name="description" content="查看你的学习进度、自测正确率与薄弱章节，并导出或导入学习数据。">
+<link rel="stylesheet" href="assets/css/base.css?v=20261018-light-ui">
+<link rel="stylesheet" href="assets/css/experiments.css?v=20261018-1">
+<link rel="stylesheet" href="assets/css/ui.css?v=20261018-preview2">
+<link rel="stylesheet" href="assets/css/motion.css?v=20261018">
+<link rel="stylesheet" href="assets/css/system.css?v=20261018-flow2">
+</head>
+<body>
+<header class="site-header" id="site-header"></header>
+
+<main class="wrap workspace-page">
+  <header class="workspace-head">
+  <div class="crumb"><a href="index.html" data-i18n="nav.home">首页</a> / <span data-i18n="tools.stats">学习统计</span></div>
+  <div class="workspace-kicker">LEARNING OVERVIEW</div>
+  <h1 data-i18n="stats.h1">学习统计</h1>
+  <p class="muted" style="max-width:560px;margin-bottom:24px" data-i18n="stats.intro">所有数据均来自当前浏览器的本地记录。换设备前可先导出 JSON 备份，再在新设备导入。</p>
+
+  </header>
+  <nav class="workspace-nav" aria-label="学习工具页面" data-i18n-aria="ws.nav"><a href="notes.html" data-i18n="tools.notes">我的笔记</a><a href="review.html" data-i18n="tools.review">错题重做</a><a href="stats.html" aria-current="page" data-i18n="tools.stats">学习统计</a></nav>
+
+  <div class="stat-cards" id="stat-cards"></div>
+
+  <div class="content-card" style="margin-bottom:16px">
+    <h2><span class="h-ico" id="ico-chapter"></span><span data-i18n="stats.chapters">章节完成度</span></h2>
+    <div id="stat-chapters"></div>
+  </div>
+
+  <div class="content-card" style="margin-bottom:16px">
+    <h2><span class="h-ico" id="ico-quiz"></span><span data-i18n="stats.quiz">自测正确率</span></h2>
+    <div id="stat-quiz"></div>
+  </div>
+
+  <section class="content-card" id="saved-lessons" style="margin-bottom:16px">
+    <h2><span class="h-ico" id="ico-saved"></span><span data-i18n="stats.saved">收藏小节</span></h2>
+    <p class="muted" style="font-size:13px" data-i18n="stats.saved.desc">把值得重看的内容放在一起，点击即可回到对应小节。</p>
+    <div class="saved-lessons-list" id="saved-lessons-list"></div>
+  </section>
+
+  <div class="content-card" style="margin-bottom:16px">
+    <h2><span class="h-ico" id="ico-data"></span><span data-i18n="stats.data">学习数据管理</span></h2>
+    <p class="muted" style="font-size:14px" data-i18n="stats.data.desc">导出内容包含：学习进度、收藏、自测成绩与错题、全部笔记。</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-primary btn-sm" id="btn-export" data-i18n="stats.export">导出 JSON 备份</button>
+      <button class="btn btn-ghost btn-sm" id="btn-import" data-i18n="stats.import">导入 JSON…</button>
+      <button class="btn btn-ghost btn-sm" id="btn-reset" style="color:#dc2626" data-i18n="stats.reset">清除全部学习数据</button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script defer src="assets/vendor/d3.min.js"></script>
+<script defer src="assets/js/course-meta.js"></script>
+<script defer src="assets/js/course-c1.js"></script>
+<script defer src="assets/js/course-c2.js"></script>
+<script defer src="assets/js/course-c3.js"></script>
+<script defer src="assets/js/course-c4.js?v=20261018-polish"></script>
+<script defer src="assets/js/course-c5.js"></script>
+<script defer src="assets/js/store.js?v=20261018-1"></script>
+<script defer src="assets/js/common.js?v=20261019-bi"></script>
+<script defer src="assets/js/i18n.js?v=20261019-bi"></script>
+<script defer src="assets/js/shell.js?v=20261021-nav-right"></script>
+<script defer src="assets/js/stats.js?v=20261019-bi"></script>
+</body>
+</html>

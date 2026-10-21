@@ -1,0 +1,100 @@
+/* Knowledge atlas: chapter spine, concept branches and explicit cross-chapter relations. */
+.knowledge-section { background: #f6f8fc; }
+#knowledge-title { scroll-margin-top: 94px; }
+.km-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.km-heading .section-lead { margin: 8px 0 25px; max-width: 720px; }
+.km-heading-note { font: 12px var(--mono); color: #75819b; white-space: nowrap; }
+#knowledge-map { border: 1px solid #dfe5f1; border-radius: 22px; background: #fff; overflow: hidden; box-shadow: 0 8px 30px #2b447108; }
+.km-toolbar { padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; border-bottom: 1px solid #edf0f6; background: #fcfdff; }
+.km-start { font-size: 13px; color: #4c6085; display: flex; align-items: center; gap: 9px; }
+.km-start > i { width: 7px; height: 7px; background: #4263df; border-radius: 50%; box-shadow: 0 0 0 4px #edf1ff; }
+.km-legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; color: #6d7b93; }
+.km-legend > span { display: flex; align-items: center; gap: 7px; }
+.km-line-sample { width: 20px; border-top: 2px solid #a6b5d5; }
+.km-branch-sample { width: 16px; height: 9px; border-bottom: 1px solid #b5c3dc; border-left: 1px solid #b5c3dc; }
+.km-current-sample { width: 8px; height: 8px; border: 2px solid #4263df; border-radius: 50%; }
+.km-weak-sample { width: 9px; height: 9px; border: 1.5px dashed #bd8420; border-radius: 50%; }
+.km-stage { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 18px; padding: 24px; background: radial-gradient(#dde5f1 .8px,transparent .8px); background-size: 18px 18px; }
+.km-cluster { position: relative; min-width: 0; height: 520px; }
+.km-chapter { position: absolute; top: 204px; left: 0; right: 0; height: 132px; padding: 14px 12px; border: 1px solid #dfe5ef; border-radius: 13px; background: #fff; color: #27354d; box-shadow: 0 3px 9px #2c487208; }
+.km-chapter:hover { text-decoration: none; border-color: var(--km-color); background: #fbfcff; }
+.km-chapter::before { content: ""; width: 5px; height: 17px; border-radius: 3px; background: var(--km-color); position: absolute; left: -1px; top: 48px; }
+.km-cluster:not(:last-child) .km-chapter::after { content: "→"; position: absolute; left: calc(100% + 1px); top: 53px; width: 17px; text-align: center; font-size: 15px; line-height: 22px; color: #91a4c6; }
+.km-chapter-top { display: flex; align-items: center; justify-content: space-between; gap: 4px; font: 10px var(--mono); color: #7c89a1; }
+.km-status { font: 10px var(--font); white-space: nowrap; }
+.km-chapter-main { display: flex; align-items: center; gap: 7px; margin: 14px 0 12px; }
+.km-chapter-main svg { width: 36px; height: 34px; color: var(--km-color); flex-shrink: 0; }
+.km-chapter-main h3 { font-size: 16px; margin: 0; line-height: 1.4; letter-spacing: 0; }
+.km-chapter-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #76849c; }
+.km-cluster.is-current .km-chapter { border: 1.5px solid #4263df; box-shadow: 0 0 0 4px #4263df0b; }
+.km-cluster.is-current .km-status { color: #4263df; }
+.km-topics { list-style: none; margin: 0; padding: 0 0 0 17px; position: absolute; left: 10px; right: 0; display: flex; flex-direction: column; gap: 9px; }
+.km-upper .km-topics { bottom: 336px; }
+.km-lower .km-topics { top: 366px; }
+.km-topics::before { content: ""; position: absolute; left: 0; width: 1px; background: #cdd8ea; }
+.km-upper .km-topics::before { top: 18px; bottom: -20px; }
+.km-lower .km-topics::before { top: -30px; bottom: 18px; }
+.km-topics li { position: relative; }
+.km-topics li::before { content: ""; position: absolute; left: -17px; width: 17px; top: 18px; height: 1px; background: #cdd8ea; }
+.km-topic { display: flex; align-items: center; gap: 6px; padding: 8px 9px; min-height: 36px; background: #fff; border: 1px solid #e4e9f2; border-radius: 7px; font-size: 12px; line-height: 1.5; color: #52617a; white-space: nowrap; }
+.km-topic small { margin-left: auto; font: 10px var(--mono); color: #8995a9; }
+.km-topic:hover { text-decoration: none; color: #27354d; border-color: var(--km-color); }
+.km-topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--km-color); opacity: .7; flex-shrink: 0; }
+.km-topic.is-current { border-color: #4263df; background: #f3f6ff; }
+.km-topic.is-current small { color: #4263df; font-family: var(--font); }
+.km-topic.is-done .km-topic-dot { width: 12px; height: 12px; font: 9px var(--font); display: grid; place-items: center; opacity: 1; color: #fff; }
+.km-topic.is-weak { border-style: dashed; border-color: #c79c4e; }
+.km-topic.is-weak small { color: #976919; font-family: var(--font); }
+.km-relations { border-top: 1px solid #e7edf5; background: #f9fbfe; padding: 22px 24px; display: flex; gap: 30px; align-items: center; }
+.km-relations-head { min-width: 126px; }
+.km-relations-head > span { font-size: 13px; font-weight: 600; color: #526580; }
+.km-relations-head p { font-size: 11px; color: #8390a6; margin: 6px 0 0; }
+.km-relation-list { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; flex: 1; min-width: 0; }
+.km-relation { display: flex; gap: 9px; align-items: center; font-size: 12px; }
+.km-relation a { color: #5a6c91; white-space: nowrap; }
+.km-relation-arrow { flex: 1; min-width: 38px; display: flex; flex-direction: column; gap: 5px; align-self: flex-end; padding-bottom: 6px; }
+.km-relation-arrow small { font-size: 10px; color: #8593ac; text-align: center; white-space: nowrap; }
+.km-relation-arrow i { position: relative; border-top: 1px dashed #a8b7d0; }
+.km-relation-arrow i::after { content: ""; position: absolute; right: 0; top: -3px; width: 5px; height: 5px; border-right: 1px solid #a8b7d0; border-top: 1px solid #a8b7d0; transform: rotate(45deg); }
+.km-footnote { display: flex; justify-content: space-between; gap: 12px; padding: 14px 24px; border-top: 1px solid #e9edf5; color: #8390a6; font-size: 11px; }
+#knowledge-map a:focus-visible { outline: 3px solid #849ef0; outline-offset: 3px; }
+@media (max-width: 1100px) {
+  .km-heading { align-items: flex-start; flex-direction: column; gap: 0; }
+  .km-heading-note { margin: -10px 0 20px; }
+  .km-stage { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
+  .km-cluster { height: auto; display: grid; grid-template-columns: minmax(200px,.8fr) minmax(240px,1fr); gap: 40px; align-items: start; }
+  .km-chapter { position: relative; inset: auto; height: 132px; }
+  .km-cluster:not(:last-child)::before { content: ""; position: absolute; left: 20px; top: 132px; bottom: -30px; border-left: 1px solid #ccd8ec; }
+  .km-cluster:not(:last-child)::after { content: "↓"; position: absolute; left: 15px; bottom: -24px; color: #91a4c6; }
+  .km-cluster:not(:last-child) .km-chapter::after { display: none; }
+  .km-topics, .km-upper .km-topics, .km-lower .km-topics { position: relative; inset: auto; padding-left: 17px; }
+  .km-topics::before, .km-upper .km-topics::before, .km-lower .km-topics::before { top: 18px; bottom: 18px; }
+  .km-topics::after { content: ""; position: absolute; left: -40px; top: 66px; width: 40px; height: 1px; background: #cdd8ea; }
+  .km-relations { flex-direction: column; align-items: stretch; gap: 20px; }
+  .km-relation-list { gap: 24px; }
+}
+@media (max-width: 600px) {
+  .km-heading .section-title { font-size: 23px; }
+  .km-heading .section-lead { font-size: 13px; }
+  .km-toolbar { padding: 18px; }
+  .km-legend { gap: 12px; font-size: 11px; }
+  .km-stage { padding: 24px 18px; gap: 28px; }
+  .km-cluster { grid-template-columns: 1fr; gap: 18px; padding-left: 18px; }
+  .km-cluster:not(:last-child)::after { top: auto; bottom: -24px; left: 0; }
+  .km-cluster:not(:last-child) .km-chapter::after { display: none; }
+  .km-cluster::before, .km-cluster:not(:last-child)::before { content: ""; position: absolute; left: 2px; top: 66px; bottom: -28px; border-left: 1px solid #ccd8ec; }
+  .km-cluster:last-child::before { bottom: 18px; }
+  .km-chapter::before { left: -22px; top: 62px; width: 7px; height: 7px; border-radius: 50%; box-shadow: 0 0 0 4px #f7f9fe; }
+  .km-chapter-main h3 { font-size: 18px; }
+  .km-chapter-top { font-size: 11px; }
+  .km-status { font-size: 11px; }
+  .km-topics, .km-upper .km-topics, .km-lower .km-topics { margin-left: 10px; }
+  .km-topics::after { top: -18px; left: 0; width: 1px; height: 36px; }
+  .km-topic { font-size: 13px; min-height: 40px; }
+  .km-topic small { font-size: 11px; }
+  .km-topics li::before { top: 20px; }
+  .km-relations { padding: 20px 18px; }
+  .km-relation-list { grid-template-columns: 1fr; gap: 20px; }
+  .km-relation { font-size: 11px; }
+  .km-footnote { flex-direction: column; padding: 14px 18px; }
+}

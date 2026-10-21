@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<title data-i18n="experiments">实验中心 · 可视化学习实验室</title>
+<meta name="description" content="26 个独立交互实验覆盖 27 个学习小节：数据变换、Data Join、可视化流水线、颜色语义、比例尺与时间视图。">
+<link rel="stylesheet" href="assets/css/base.css?v=20261018-light-ui">
+<link rel="stylesheet" href="assets/css/experiments.css?v=20261018-1">
+<link rel="stylesheet" href="assets/css/ui.css?v=20261018-preview2">
+<link rel="stylesheet" href="assets/css/motion.css?v=20261018">
+<link rel="stylesheet" href="assets/css/interactions.css?v=20261018-2">
+<link rel="stylesheet" href="assets/css/system.css?v=20261018-flow2">
+<link rel="stylesheet" href="assets/css/experiment-center.css?v=20261021-method">
+</head>
+<body class="lab-center">
+<header class="site-header" id="site-header"></header>
+
+<main>
+<section class="center-hero" aria-labelledby="center-title">
+  <div class="wrap center-hero-grid">
+    <div class="center-intro">
+      <div class="center-kicker"><span></span> VISUALIZATION / LABORATORY</div>
+      <h1 id="center-title" data-i18n-html="exp.h1">实验中心<span>动手，让理解发生。</span></h1>
+      <p data-i18n="exp.intro">把抽象概念放进可操作的图形。改变参数、观察变化，在一次次尝试中，找到数据背后的规律。</p>
+      <div class="center-hero-actions"><button class="btn" id="explore-key" type="button" data-i18n="exp.start">从重点实验开始 ↗</button><a href="#lab-catalog" data-i18n="exp.browse">浏览全部实验 ↓</a></div>
+      <div class="center-metrics"><span><b id="catalog-total">26</b><span data-i18n="exp.m1">独立实验</span></span><span><b>05</b><span data-i18n="exp.m2">学习主题</span></span><span><b>06</b><span data-i18n="exp.m3">重点实验</span></span></div>
+      <div class="center-coverage" data-i18n="exp.coverage">覆盖全部 27 个学习小节 · 比例尺与曲线合并展示</div>
+    </div>
+    <section class="feature-lab" aria-label="重点实验导览">
+      <div class="feature-top"><span><i></i> <span data-i18n="exp.feature">重点实验导览</span></span><span id="feature-index">01 / 06</span></div>
+      <div id="feature-content" aria-live="polite"></div>
+      <div class="feature-controls"><button type="button" id="feature-prev" aria-label="上一个重点实验" data-i18n-aria="exp.prev">←</button><div id="feature-dots" aria-label="选择重点实验"></div><button type="button" id="feature-next" aria-label="下一个重点实验" data-i18n-aria="exp.next">→</button></div>
+    </section>
+  </div>
+  <ol class="wrap center-method" aria-label="实验学习方法" data-i18n-aria="exp.method"><li><span>01</span><span data-i18n="exp.step1">明确任务</span><small data-i18n="exp.step1s">带着问题进入实验</small></li><li><span>02</span><span data-i18n="exp.step2">调整参数</span><small data-i18n="exp.step2s">亲手改变数据与图形</small></li><li><span>03</span><span data-i18n="exp.step3">观察变化</span><small data-i18n="exp.step3s">比较操作前后的差异</small></li><li><span>04</span><span data-i18n="exp.step4">解释结果</span><small data-i18n="exp.step4s">回到原理，形成理解</small></li></ol>
+</section>
+
+<section class="wrap center-catalog" id="lab-catalog" aria-labelledby="catalog-title">
+  <div class="catalog-heading"><div><div class="workspace-kicker">EXPLORE THE LABS</div><h2 id="catalog-title" data-i18n="exp.catalog.title">找到你想探索的问题</h2></div><button class="center-text-btn" id="copy-filters" type="button" data-i18n="exp.copy">复制筛选链接 ↗</button></div>
+  <div class="catalog-filters" id="catalog-filters">
+    <div class="catalog-search-row">
+      <div class="catalog-search"><label class="visually-hidden" for="experiment-search" data-i18n="exp.find">查找实验</label><span id="catalog-search-icon" aria-hidden="true"></span><input id="experiment-search" type="search" placeholder="搜索实验、概念或英文术语…" data-i18n-ph="exp.search.ph" maxlength="120" autocomplete="off"></div>
+      <label class="center-key-toggle"><input id="experiment-key-only" type="checkbox"><span data-i18n="exp.keyonly">重点实验</span></label>
+      <label class="center-scope"><span class="visually-hidden">学习状态</span><select id="experiment-scope" aria-label="学习状态"><option value="all" data-i18n="exp.scope.all">全部学习状态</option><option value="new" data-i18n="exp.scope.new">尚未浏览</option><option value="visited" data-i18n="exp.scope.visited">已浏览未掌握</option><option value="mastered" data-i18n="exp.scope.mastered">已掌握</option><option value="saved" data-i18n="exp.scope.saved">我的收藏</option></select></label>
+      <button class="center-text-btn" id="experiment-reset" type="button" data-i18n="exp.reset">重置</button>
+    </div>
+    <div class="catalog-topics-label"><span data-i18n="exp.topics">课程主题</span><small data-i18n="exp.swipe">可左右滑动</small></div>
+    <div class="filter-bar" id="filter-bar" role="group" aria-label="按章节筛选"></div>
+  </div>
+  <div class="catalog-results-row"><p id="experiment-results" role="status" aria-live="polite" tabindex="-1"></p><div class="catalog-view-tools"><label for="experiment-sort" class="visually-hidden">实验排序</label><select id="experiment-sort"><option value="course" data-i18n="exp.sort.course">课程顺序</option><option value="key" data-i18n="exp.sort.key">重点优先</option></select><div class="catalog-view" role="group" aria-label="实验显示方式"><button id="view-grid" type="button" aria-label="卡片视图" aria-pressed="true"></button><button id="view-list" type="button" aria-label="列表视图" aria-pressed="false"></button></div></div></div>
+  <div class="active-lab-filters" id="active-lab-filters" aria-label="已选筛选条件"></div>
+  <div class="exp-grid" id="exp-grid"></div>
+  <div class="catalog-bottom-note"><span id="catalog-note-icon" aria-hidden="true"></span><p data-i18n="exp.note1">“已浏览”和“已掌握”来自小节学习记录。实验中的操作不会自动标记掌握。</p><a href="stats.html" data-i18n="exp.note2">查看学习进度 ↗</a></div>
+</section>
+</main>
+
+<dialog id="lab-info-dialog" class="lab-info-dialog" aria-labelledby="lab-info-title"><div class="lab-info-inner"><button id="lab-info-close" class="icon-btn" aria-label="关闭实验说明" data-i18n-aria="exp.dialog.close" autofocus></button><div id="lab-info-content"></div></div></dialog>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script defer src="assets/vendor/d3.min.js"></script>
+<script defer src="assets/js/course-meta.js"></script>
+<script defer src="assets/js/course-c1.js"></script>
+<script defer src="assets/js/course-c2.js"></script>
+<script defer src="assets/js/course-c3.js"></script>
+<script defer src="assets/js/course-c4.js?v=20261018-polish"></script>
+<script defer src="assets/js/course-c5.js"></script>
+<script defer src="assets/js/store.js"></script>
+<script defer src="assets/js/common.js?v=20261019-bi"></script>
+<script defer src="assets/js/i18n.js?v=20261019-bi"></script>
+<script defer src="assets/js/shell.js?v=20261021-nav-right"></script>
+<script defer src="assets/js/experiments.js?v=20261019-bi"></script>
+</body>
+</html>

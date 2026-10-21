@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<title data-i18n="title.notes">我的笔记 · 可视化学习实验室</title>
+<meta name="description" content="查看你在学习过程中记录的所有笔记，按章节聚合，支持全文搜索。">
+<link rel="stylesheet" href="assets/css/base.css?v=20261018-light-ui">
+<link rel="stylesheet" href="assets/css/experiments.css?v=20261018-1">
+<link rel="stylesheet" href="assets/css/ui.css?v=20261018-preview2">
+<link rel="stylesheet" href="assets/css/motion.css?v=20261018">
+<link rel="stylesheet" href="assets/css/system.css?v=20261018-flow2">
+</head>
+<body>
+<header class="site-header" id="site-header"></header>
+
+<main class="wrap workspace-page">
+  <header class="workspace-head">
+  <div class="crumb"><a href="index.html" data-i18n="nav.home">首页</a> / <span data-i18n="tools.notes">我的笔记</span></div>
+  <div class="workspace-kicker">LEARNING NOTES</div>
+  <h1 data-i18n="notes.h1">我的笔记</h1>
+  <p class="muted" style="max-width:560px;margin-bottom:24px" data-i18n-html="notes.intro">你在各小节中记录的笔记都会汇总在这里，支持全文搜索；笔记中写 <b>#标签</b>（如 <b>#比例尺</b>）即可按标签筛选，点击笔记可跳回对应小节。</p>
+
+  </header>
+  <nav class="workspace-nav" aria-label="学习工具页面" data-i18n-aria="ws.nav"><a href="notes.html" aria-current="page" data-i18n="tools.notes">我的笔记</a><a href="review.html" data-i18n="tools.review">错题重做</a><a href="stats.html" data-i18n="tools.stats">学习统计</a></nav>
+
+  <div class="notes-toolbar">
+    <div class="search-wrap" style="width:100%;max-width:400px">
+      <span class="search-ico" aria-hidden="true" id="notes-search-ico"></span>
+      <input type="search" id="notes-search" placeholder="搜索笔记内容…" data-i18n-ph="notes.search.ph" autocomplete="off">
+    </div>
+    <button class="btn btn-ghost btn-sm" id="notes-export" data-i18n="notes.export">导出 Markdown</button>
+  </div>
+  <div class="notes-tags" id="notes-tags"></div>
+
+  <div id="notes-list"></div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script defer src="assets/vendor/d3.min.js"></script>
+<script defer src="assets/js/course-meta.js"></script>
+<script defer src="assets/js/course-c1.js"></script>
+<script defer src="assets/js/course-c2.js"></script>
+<script defer src="assets/js/course-c3.js"></script>
+<script defer src="assets/js/course-c4.js?v=20261018-polish"></script>
+<script defer src="assets/js/course-c5.js"></script>
+<script defer src="assets/js/store.js"></script>
+<script defer src="assets/js/common.js?v=20261019-bi"></script>
+<script defer src="assets/js/i18n.js?v=20261019-bi"></script>
+<script defer src="assets/js/shell.js?v=20261021-nav-right"></script>
+<script defer src="assets/js/notes.js?v=20261019-bi"></script>
+</body>
+</html>
