@@ -15,7 +15,7 @@
   const ch = I18N.chapterObj(found.ch);
   const ls = I18N.lessonObj(found.ls);
   document.documentElement.style.setProperty("--accent", ch.accent);
-  document.title = ch.id + "." + ls.l + " " + ls.title + " · " + Common.L("可视化学习实验室", "Visualization Learning Lab");
+  document.title = ch.id + "." + ls.l + " " + ls.title + " · VisLab";
   Shell.init("ch" + ch.id);
   Store.visit(ch.id, ls.l);
 

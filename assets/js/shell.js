@@ -147,7 +147,7 @@
     header.innerHTML =
       '<div class="bar">' +
       '<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><img src="assets/images/logo.png" alt="" width="44" height="44"></span>' +
-      "<span>" + Common.L("可视化学习实验室", "Visualization Learning Lab") + "<small>" + Common.L("《可视化导论》", "Intro. to Data Visualization") + "</small></span></a>" +
+      "<span>VisLab<small>" + Common.L("可视化学习实验室", "Visualization Learning Lab") + "</small></span></a>" +
       '<div class="header-spacer"></div>' +
       '<nav class="nav-links">' +
       '<a href="index.html" data-nav="home">' + Common.L("首页", "Home") + '</a>' +

@@ -11,7 +11,7 @@
     f.innerHTML =
       '<div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start">' +
       "<div>" +
-      "<b>" + L("可视化学习实验室", "Visualization Learning Lab") + "</b> · " + L("《可视化导论》交互式学习网站", "interactive course site for Introduction to Data Visualization") + "<br>" +
+      "<b>VisLab</b> · " + L("《可视化导论》交互式学习网站", "interactive course site for Introduction to Data Visualization") + "<br>" +
       '<span class="muted">' + L("认识数据 · 理解流程 · 选择颜色 · 表达图形 · 发现规律", "Know data · Understand process · Choose color · Express graphics · Discover patterns") + "</span>" +
       "</div>" +
       '<div style="max-width:430px">' +

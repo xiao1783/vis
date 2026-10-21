@@ -15,13 +15,13 @@
   /* 静态 HTML 英文词典（key → 英文；中文即页面原文） */
   const EN = {
     /* <title> 与 meta */
-    "title.home": "Visualization Learning Lab · Introduction to Data Visualization",
-    "title.chapter": "Chapter · Visualization Learning Lab",
-    "title.lesson": "Lesson · Visualization Learning Lab",
-    "title.experiments": "Experiment Center · Visualization Learning Lab",
-    "title.notes": "My Notes · Visualization Learning Lab",
-    "title.review": "Review Mistakes · Visualization Learning Lab",
-    "title.stats": "Learning Stats · Visualization Learning Lab",
+    "title.home": "VisLab · Introduction to Data Visualization",
+    "title.chapter": "Chapter · VisLab",
+    "title.lesson": "Lesson · VisLab",
+    "title.experiments": "Experiment Center · VisLab",
+    "title.notes": "My Notes · VisLab",
+    "title.review": "Review Mistakes · VisLab",
+    "title.stats": "Learning Stats · VisLab",
 
     /* 首页 hero */
     "hero.tag-edition": "Interactive Learning",
@@ -69,7 +69,7 @@
     "home.pace.storage": "Progress is saved in this browser",
 
     /* 页脚 */
-    "footer.site": "Visualization Learning Lab",
+    "footer.site": "VisLab",
     "footer.sub": " · interactive course site for Introduction to Data Visualization",
     "footer.motto": "Know data · Understand process · Choose color · Express graphics · Discover patterns",
     "footer.storage": "Progress and bookmarks are stored in this browser.",

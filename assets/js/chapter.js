@@ -15,7 +15,7 @@
   }
 
   Shell.init("ch" + ch.id);
-  document.title = ch.num + " · " + ch.title + " — " + Common.L("可视化学习实验室", "Visualization Learning Lab");
+  document.title = ch.num + " · " + ch.title + " — VisLab";
 
   const prog = Store.chapterProgress(ch);
   const next = ch.lessons.find((ls) => !Store.isCompleted(ls.id)) || ch.lessons[0];

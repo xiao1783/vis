@@ -3,7 +3,7 @@
  * 五章 27 小节的完整内容分别见 course-c1.js ~ course-c5.js
  * ============================================================ */
 window.COURSE = {
-  name: "可视化学习实验室",
+  name: "VisLab",
   title: "《可视化导论》交互式学习网站",
   subtitle: "认识数据 → 理解流程 → 选择颜色 → 表达低维数据 → 分析时间变化",
   original: "https://cinger007.github.io/vis/",
