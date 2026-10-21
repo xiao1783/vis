@@ -59,6 +59,6 @@ Copyright 2010–2023 Mike Bostock. All rights reserved.
 
 ## 5. 其他说明
 
-- 本网站不包含任何视频、音频或受版权保护的第三方媒体文件；除上述开源库与教学数据外，
-  其余图形（favicon、所有图表、流程图、示意图）均由本站使用 SVG/D3 自行绘制。
+- 本网站不包含视频或音频。界面使用 `assets/images/logo.png` 作为 VisLab 网站标识，
+  首页场景素材位于 `assets/images/hero/`；课程图表、流程图和交互图形使用 SVG/D3 在浏览器中绘制。
 - 未使用任何在线字体、图标库或需要密钥的第三方服务。
